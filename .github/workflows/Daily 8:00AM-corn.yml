@@ -1,0 +1,23 @@
+name: Daily 8 AM Cron
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  daily-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print start message
+        run: echo "Daily job started!"
+
+      - name: Display date and time
+        run: date
+
+      - name: Display current working directory
+        run: pwd
+
+      - name: Print completion message
+        run: echo "Daily job completed!"
